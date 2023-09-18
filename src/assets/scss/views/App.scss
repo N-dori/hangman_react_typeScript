@@ -1,0 +1,144 @@
+.game-container{
+    max-width: 800px;
+    gap : 2em ;
+    margin: 0 auto;
+    align-items: center;
+   
+    .game-result{
+        font-size: 2em ;
+        text-align: center;
+    }
+    .drawing-container{
+        position: relative;
+        .part0{
+            position: absolute;
+            height: 50px;
+            width: 10px;
+            background: black;
+            top:0;
+            right: 0;
+        }
+        .head{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: 10px solid black;
+            position: absolute;
+            top: 50px;
+            right: -20px;
+        }
+        .body{
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            top: 100px;
+            right: 0px;
+            background-color: black;
+        }
+        .rigth-arm{
+            width: 100px;
+            height: 10px;
+            position: absolute;
+            top: 150px;
+            right: -100px;
+            rotate: -30deg;
+            background-color: black;
+            transform-origin:left bottom ;
+        }
+        .left-arm{
+            width: 100px;
+            height: 10px;
+            position: absolute;
+            top: 150px;
+            right: 10px;
+            rotate: 30deg;
+            background-color: black;
+            transform-origin:right bottom ;
+        }
+        .rigth-leg{
+            width: 100px;
+            height: 10px;
+            position: absolute;
+            top: 190px;
+            right: -90px;
+            rotate: 60deg;
+            background-color: black;
+            transform-origin:left bottom ;
+        }
+        .left-leg{
+            width: 100px;
+            height: 10px;
+            position: absolute;
+            top: 190px;
+            right: 0px;
+            rotate: -60deg;
+            background-color: black;
+            transform-origin:right bottom ;
+        }
+        .part1{
+            height: 10px;
+            width: 200px;
+            background: black;
+            margin-left: 120px;
+        }
+        .part2{
+            height: 400px;
+            width: 10px;
+            background-color: black;
+            margin-left: 120px;
+        }
+        .part3{
+            height: 10px;
+            width: 250px;
+            background: black;
+     
+        }
+    }
+.hangman-word{
+    gap:.25em;
+    font-size: 6em;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: monospace;
+    .letter-place{
+        border-bottom: 0.1em solid black;
+    }
+
+}
+.keyboard-container{
+
+align-self: stretch;
+    .keyboard{
+        grid-template-columns: repeat(auto-fit, minmax(75px,1fr));
+        gap: .5em;
+        .key{
+            width: 100%;
+            border: 3px solid black;
+            background: none;
+            aspect-ratio: 1/1;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            // padding: .5em;
+            font-weight: 600;
+            cursor: pointer;
+            color: black;
+        }
+        .key{
+            &:hover:not(:disabled){
+                background-color: hsl(200,100%,75%);
+            }
+            &:focus:not(:disabled){
+                background-color: hsl(200,100%,75%);
+            }
+            &.active{
+                background-color: hsl(200,100%,50%);
+           color: #ffff;
+            }
+            &.inactive{
+                opacity: .3;
+            }
+        }
+       
+    }
+}
+}
